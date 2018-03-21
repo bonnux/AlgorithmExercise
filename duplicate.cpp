@@ -12,7 +12,9 @@ bool duplicate(int numbers[],int length,int* duplication){
 
 	for(int i=0; i<length; ++i){
 		while(numbers[i]!=i){
-			if(numbers[i]==numbers)
+			if(numbers[i]==numbers[numbers[i]]){
+				
+			}
 		}
 	}
 }
