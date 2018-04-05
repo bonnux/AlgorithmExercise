@@ -1,4 +1,13 @@
 public class MyLinkedList{
+
+	class Node{
+		Node next = null;
+		int data;
+		public Node(int data){
+			this.data = data;
+		}
+	}
+
 	Node head = null; //链表头的引用
 	/**
 	 *向链表中插入数据
@@ -56,29 +65,48 @@ public class MyLinkedList{
 		}
 		return length;
 	}
-	
+	/**
+	 *对链表进行排序
+	 *返回排序后的头结点
+	 */
+	public Node orderList(){
+		Node nextNode = null;
+		int temp = 0;
+		Node curNode = head;
+		while (curNode.next!=null) {
+			nextNode = curNode.next;
+			while(nextNode!=null){
+			if (curNode.data > nextNode.data) {
+				temp = curNode.data;
+				curNode.data = nextNode.data;
+				nextNode.data = temp;
+			}
+				nextNode = nextNode.next;
+			}
+			curNode = curNode.next;
+		}
+		return head;
+  	}
+  	public void printList(){
+  		Node tmp = head;
+  		while (tmp!=null) {
+  			System.out.println(tmp.data);
+  			tmp = tmp.next;
+  		}
+  	}
+
+  	public static void main(String[] args){
+  		MyLinkedList list = new MyLinkedList();
+  		list.addNode(3);
+  		list.addNode(5);
+  		list.addNode(2);
+  		list.addNode(8);
+  		list.deleteNode(1);
+  		System.out.println("listLen = "+list.length());
+  		System.out.println("before order:");
+  		list.printList();
+  		list.orderList();
+  		System.out.println("after order:");
+  		list.printList();
+  	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
