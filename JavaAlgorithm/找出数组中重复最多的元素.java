@@ -34,6 +34,7 @@ public class MostFrequent{
 
 	public static void main(String[] args) {
 		int array[] = {1,2,4,3,5,1,3,4,2,4,2,5};
-		
+		int maxFrequenceNum = findMostFrequentInArray(array);
+		System.out.println(maxFrequenceNum);
 	}
 }
