@@ -17,6 +17,8 @@ public class FindKLeast{
 			if(i < j)
 				array[j--] = array[i];
 		}
-		array[i] = 
+		array[i] = tmp;
+		if(i + 1 == k)
+			return tmp;
 	}
 }
