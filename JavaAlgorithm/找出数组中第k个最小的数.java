@@ -20,5 +20,9 @@ public class FindKLeast{
 		array[i] = tmp;
 		if(i + 1 == k)
 			return tmp;
+		else if(i + 1 > k)
+			return quickSort(array,low,i-1,k);
+		else
+			return quickSort(array,i+1,high,k);
 	}
 }
