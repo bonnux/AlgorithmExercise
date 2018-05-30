@@ -7,8 +7,14 @@ public class Sort{
 			temp = a[i];
 			flag = i;
 			for(int j = i + 1; j < n; j++){
-				
+				if(a[j] < temp)
+					temp = a[j];
+					flag = j;
 			}
+		}
+		if(flag != i){
+			a[flag] = a[i];
+			a[i] = temp;
 		}
 	}
 }
